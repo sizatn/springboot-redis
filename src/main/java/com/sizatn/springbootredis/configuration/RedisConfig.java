@@ -1,23 +1,20 @@
 package com.sizatn.springbootredis.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
-import com.sizatn.springbootredis.properties.RedisZeroProperties;
-
 import redis.clients.jedis.JedisPoolConfig;
 
 @Configuration
-@EnableConfigurationProperties(RedisZeroProperties.class)
-public class RedisZeroConfig {
+public class RedisConfig {
 
 	@Autowired
-	private RedisZeroProperties redisProperties;
+	private RedisProperties redisProperties;
 
 	@Bean
 	@Primary
