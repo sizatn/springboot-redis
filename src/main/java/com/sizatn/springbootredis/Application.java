@@ -15,7 +15,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
-		StringRedisTemplate rt0 = (StringRedisTemplate) context.getBean("redisZeroTemplate");
+		StringRedisTemplate rt0 = (StringRedisTemplate) context.getBean("redisTemplate");
 		StringRedisTemplate rt1 = (StringRedisTemplate) context.getBean("redisOneTemplate");
 		StringRedisTemplate rt2 = (StringRedisTemplate) context.getBean("redisTwoTemplate");
 		

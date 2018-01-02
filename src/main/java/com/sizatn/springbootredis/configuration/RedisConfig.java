@@ -40,7 +40,7 @@ public class RedisConfig {
 
 	@Bean
 	@Primary
-	public StringRedisTemplate redisemplate() {
+	public StringRedisTemplate redisTemplate() {
 		StringRedisTemplate srt = new StringRedisTemplate();
 		srt.setConnectionFactory(jedisConnectionFactory());
 		return srt;
