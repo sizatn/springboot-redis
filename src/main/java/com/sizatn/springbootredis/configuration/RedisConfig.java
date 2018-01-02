@@ -18,7 +18,7 @@ public class RedisConfig {
 
 	@Bean
 	@Primary
-	public JedisPoolConfig jedisZeroPoolConfig() {
+	public JedisPoolConfig jedisPoolConfig() {
 		JedisPoolConfig jpc = new JedisPoolConfig();
 		jpc.setMaxIdle(redisProperties.getPool().getMaxIdle());
 		jpc.setMinIdle(redisProperties.getPool().getMinIdle());
@@ -29,20 +29,20 @@ public class RedisConfig {
 
 	@Bean
 	@Primary
-	public JedisConnectionFactory jedisZeroConnectionFactory() {
+	public JedisConnectionFactory jedisConnectionFactory() {
 		JedisConnectionFactory jcf = new JedisConnectionFactory();
 		jcf.setDatabase(redisProperties.getDatabase());
 		jcf.setHostName(redisProperties.getHost());
 		jcf.setPort(redisProperties.getPort());
-		jcf.setPoolConfig(jedisZeroPoolConfig());
+		jcf.setPoolConfig(jedisPoolConfig());
 		return jcf;
 	}
 
 	@Bean
 	@Primary
-	public StringRedisTemplate redisZeroTemplate() {
+	public StringRedisTemplate redisemplate() {
 		StringRedisTemplate srt = new StringRedisTemplate();
-		srt.setConnectionFactory(jedisZeroConnectionFactory());
+		srt.setConnectionFactory(jedisConnectionFactory());
 		return srt;
 	}
 
