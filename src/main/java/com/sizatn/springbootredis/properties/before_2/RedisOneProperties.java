@@ -1,8 +1,8 @@
-package com.sizatn.springbootredis.properties;
+package com.sizatn.springbootredis.properties.before_2;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "redis1")
+//@ConfigurationProperties(prefix = "redis1")
 public class RedisOneProperties {
 	
 	/**

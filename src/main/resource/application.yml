@@ -1,33 +1,58 @@
+# springboot 2.0.0 自动装载 默认 lettuce 配置
 spring: 
   redis: 
     database: 0
     host: 200.20.2.160
+    password: foobared
     port: 6379
+    lettuce: 
+      pool: 
+        max-idle: 100
+        min-idle: 10
+        max-active: 1000
+        max-wait: -1
+        # shutdown-timeout可选，源码已默认配置
+        shutdown-timeout: 100
+
+# springboot 2.0.0 自定义配置
+redis1: 
+  database: 1
+  host: 200.20.2.160
+  password: foobared
+  port: 6379
+  lettuce: 
     pool: 
       max-idle: 100
       min-idle: 10
       max-active: 1000
       max-wait: -1
+      # shutdown-timeout可选，源码已默认配置
+      shutdown-timeout: 100
+      
+# springboot 2.0.0 之前 自动装载 默认配置
+#spring: 
+#  redis: 
+#    database: 0
+#    host: 192.168.43.216
+#    password: foobared
+#    port: 6379
+#    pool: 
+#      max-idle: 100
+#      min-idle: 10
+#      max-active: 1000
+#      max-wait: -1
 
-redis1: 
-  database: 1
-  host: 200.20.2.160
-  port: 6379
-  pool: 
-    max-idle: 100
-    min-idle: 10
-    max-active: 1000
-    max-wait: -1
-
-redis2: 
-  database: 2
-  host: 200.20.2.160
-  port: 6379
-  pool: 
-    max-idle: 100
-    min-idle: 10
-    max-active: 1000
-    max-wait: -1
+# springboot 2.0.0 之前自定义配置
+#redis1: 
+#  database: 1
+#  host: 192.168.43.216
+#  password: foobared
+#  port: 6379
+#  pool: 
+#    max-idle: 100
+#    min-idle: 10
+#    max-active: 1000
+#    max-wait: -1
     
 #logging: 
   #config: classpath:logback-boot.xml
