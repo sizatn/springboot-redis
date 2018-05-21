@@ -17,7 +17,6 @@ public class Application {
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 
 		// 通过beanname获取对象
-		// 为什么会只写入database:0呢？
 		StringRedisTemplate srt = (StringRedisTemplate) context.getBean("redisTemplate");
 		StringRedisTemplate srt1 = (StringRedisTemplate) context.getBean("redisOneTemplate");
 		
